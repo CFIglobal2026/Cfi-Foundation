@@ -1,71 +1,680 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CFI Foundation | Higher Education</title>
+<title>CFI Foundation | Higher Education Support</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+:root{
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+--navy:#050B1F;
+--navy-light:#0B1638;
+--blue:#132A63;
+
+--gold:#D4AF37;
+--gold-light:#FFD700;
+
+--text:#ffffff;
+--text-soft:#d8c98c;
+
+--border:rgba(212,175,55,0.25);
+
+}
+
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+background:var(--navy);
+color:var(--text);
+font-family:'Jost',sans-serif;
+overflow-x:hidden;
+
+}
+
+
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+}
+
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+
+
+/* ================= NAVBAR ================= */
+
+
+nav{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:22px 6%;
+
+background:rgba(5,11,31,0.85);
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid var(--border);
+
+}
+
+
+
+/* LOGO */
+
+
+.logo{
+
+display:flex;
+align-items:center;
+gap:12px;
+
+}
+
+
+.logo-circle{
+
+width:42px;
+height:42px;
+
+border:1px solid var(--gold);
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-family:'Playfair Display';
+
+color:var(--gold-light);
+
+font-size:15px;
+
+}
+
+
+
+.logo-text{
+
+font-size:14px;
+letter-spacing:2px;
+text-transform:uppercase;
+
+color:white;
+
+}
+
+
+.logo-text span{
+
+color:var(--gold-light);
+
+}
+
+
+
+
+
+/* NAV LINKS */
+
+
+.nav-links{
+
+display:flex;
+gap:35px;
+
+}
+
+
+.nav-links a{
+
+font-size:13px;
+letter-spacing:1px;
+text-transform:uppercase;
+
+color:#ddd;
+
+transition:.3s;
+
+}
+
+
+
+.nav-links a:hover{
+
+color:var(--gold-light);
+
+}
+
+
+
+
+
+.apply-btn{
+
+
+padding:12px 26px;
+
+border:1px solid var(--gold);
+
+color:var(--gold-light);
+
+font-size:13px;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+transition:.3s;
+
+
+}
+
+
+
+.apply-btn:hover{
+
+background:var(--gold);
+color:#050B1F;
+
+}
+
+
+
+
+
+/* ================= HERO ================= */
+
+
+.hero{
+
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:120px 6% 60px;
+
+position:relative;
+
+
+}
+
+
+
+.hero::before{
+
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+
+background:
+
+radial-gradient(circle at 80% 20%,
+rgba(212,175,55,.18),
+transparent 35%),
+
+linear-gradient(
+180deg,
+rgba(5,11,31,.2),
+var(--navy)
+);
+
+
+}
+
+
+
+
+
+.hero-container{
+
+
+position:relative;
+
+z-index:2;
+
+max-width:1200px;
+
+width:100%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+gap:60px;
+
+
+}
+
+
+
+
+
+/* HERO TEXT */
+
+
+.badge{
+
+
+display:inline-block;
+
+padding:8px 18px;
+
+border:1px solid var(--border);
+
+border-radius:50px;
+
+font-size:12px;
+
+letter-spacing:2px;
+
+color:var(--gold-light);
+
+margin-bottom:25px;
+
+}
+
+
+
+.hero h1{
+
+
+font-size:clamp(40px,5vw,68px);
+
+line-height:1.15;
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.hero h1 span{
+
+color:var(--gold-light);
+
+font-style:italic;
+
+}
+
+
+
+
+.hero p{
+
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#d8d8d8;
+
+max-width:520px;
+
+margin-bottom:35px;
+
+
+}
+
+
+
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.primary-btn{
+
+
+background:linear-gradient(
+135deg,
+#FFD700,
+#C79B24
+);
+
+
+color:#050B1F;
+
+
+padding:15px 35px;
+
+
+font-weight:600;
+
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+
+}
+
+
+
+.secondary-btn{
+
+
+border:1px solid var(--border);
+
+
+padding:15px 35px;
+
+
+color:var(--gold-light);
+
+
+}
+
+
+
+
+
+/* HERO IMAGE AREA */
+
+
+.hero-card{
+
+
+height:430px;
+
+border-radius:20px;
+
+
+background:
+
+linear-gradient(
+145deg,
+#132A63,
+#07102b
+);
+
+
+border:1px solid var(--border);
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+box-shadow:
+0 30px 80px rgba(0,0,0,.5);
+
+
+}
+
+
+
+.hero-card h2{
+
+
+font-size:40px;
+
+color:var(--gold-light);
+
+text-align:center;
+
+
+}
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:900px){
+
+
+.nav-links{
+
+display:none;
+
+}
+
+
+
+.hero-container{
+
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+
+}
+
+
+
+.hero p{
+
+margin:auto auto 35px;
+
+}
+
+
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+
+
+.hero-card{
+
+height:300px;
+
+}
+
+
+}
+
+
+
+</style>
 
 </head>
 
+
 <body>
 
-    <!-- Navigation -->
 
-    <header>
+<!-- NAVBAR -->
 
-        <nav class="navbar">
 
-            <div class="logo">
+<nav>
 
-                <img src="images/logo.png" alt="CFI Foundation Logo">
 
-                <div class="logo-text">
+<div class="logo">
 
-                    <h2>CFI Foundation</h2>
 
-                    <span>Higher Education Division</span>
+<div class="logo-circle">
+CFI
+</div>
 
-                </div>
 
-            </div>
+<div class="logo-text">
 
-            <ul class="nav-links">
+CFI <span>Foundation</span>
 
-                <li><a href="#">Home</a></li>
+</div>
 
-                <li><a href="#">About</a></li>
 
-                <li><a href="#">Programs</a></li>
+</div>
 
-                <li><a href="#">Universities</a></li>
 
-                <li><a href="#">Contact</a></li>
 
-            </ul>
+<div class="nav-links">
 
-            <a href="#" class="apply-btn">Apply Now</a>
+<a href="#about">About</a>
 
-        </nav>
+<a href="#benefits">Benefits</a>
 
-    </header>
+<a href="#journey">Journey</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+
+
+<a href="#contact" class="apply-btn">
+
+Apply Now
+
+</a>
+
+
+
+</nav>
+
+
+
+
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+
+<div class="hero-container">
+
+
+
+<div class="hero-content">
+
+
+<div class="badge">
+
+Punjab & Chandigarh | Admission To Placement
+
+</div>
+
+
+
+<h1>
+
+Begin Your
+
+<span>
+Higher Education
+</span>
+
+Journey With CFI Foundation
+
+</h1>
+
+
+
+<p>
+
+Complete guidance from admission counselling to career placement. 
+We support students at every step with trusted education solutions.
+
+</p>
+
+
+
+<div class="hero-buttons">
+
+
+<a href="#contact" class="primary-btn">
+
+Start Application
+
+</a>
+
+
+<a href="#benefits" class="secondary-btn">
+
+Explore Benefits
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="hero-card">
+
+<h2>
+Your Future<br>
+Starts Here
+</h2>
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
 
 </body>
-
 </html>
