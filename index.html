@@ -14,17 +14,17 @@
 
 :root{
 
---navy:#06142F;
---navy-light:#0D2A5C;
---blue:#174EA6;
+--navy:#050B1F;
+--navy-light:#0B1638;
+--blue:#132A63;
 
 --primary:#2563EB;
 --primary-light:#60A5FA;
 
---white:#ffffff;
+--white:#FFFFFF;
 --text-soft:#D1D5DB;
 
---border:rgba(255,255,255,0.15);
+--border:rgba(96,165,250,0.20);
 
 }
 
@@ -238,7 +238,6 @@ position:relative;
 
 .hero::before{
 
-
 content:"";
 
 position:absolute;
@@ -248,15 +247,18 @@ inset:0;
 
 background:
 
-radial-gradient(circle at 80% 20%,
-rgba(212,175,55,.18),
-transparent 35%),
-
 linear-gradient(
-180deg,
-rgba(5,11,31,.2),
-var(--navy)
-);
+90deg,
+rgba(5,11,31,.95),
+rgba(5,11,31,.65)
+),
+
+url("hero-bg.jpg");
+
+
+background-size:cover;
+
+background-position:center;
 
 
 }
@@ -375,22 +377,20 @@ flex-wrap:wrap;
 
 .primary-btn{
 
-background:linear-gradient(
+background:
+
+linear-gradient(
 135deg,
 #2563EB,
 #1D4ED8
 );
 
+
 color:white;
-
-padding:15px 35px;
-
-font-weight:600;
 
 border-radius:6px;
 
 }
-
 
 
 
