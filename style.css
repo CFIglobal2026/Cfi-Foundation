@@ -117,14 +117,18 @@ body{
 .hero-card{
     display:flex;
     justify-content:center;
+    align-items:center;
+    background:none;
+    border:none;
+    box-shadow:none;
 }
-
 .hero-image{
-    width:380px;
-    height:500px;
+    width:340px;
+    height:440px;
     object-fit:cover;
     border-radius:20px;
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
+    display:block;
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
 }
 
 @media(max-width:991px){
