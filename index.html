@@ -215,6 +215,16 @@ color:var(--primary-light);
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(255, 215, 0, 0.35);
 }
+    .apply-mobile{
+    background:#2563EB;
+    color:#fff !important;
+    padding:12px 20px;
+    border-radius:8px;
+    margin:15px auto;
+    width:180px;
+    text-align:center;
+    font-weight:600;
+}
 
 .pay-nav-btn:hover{
     background: #ffffff;
@@ -454,51 +464,68 @@ color:var(--primary-light);
 /* MOBILE */
 
 
+/* MOBILE NAVBAR */
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:#fff;
+    cursor:pointer;
+}
+
 @media(max-width:900px){
 
+    nav{
+        padding:18px 5%;
+    }
 
-.nav-links{
+    .menu-toggle{
+        display:block;
+    }
 
-display:none;
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:#061A40;
+        flex-direction:column;
+        text-align:center;
+        padding:20px 0;
+        border-top:1px solid rgba(255,255,255,.15);
+    }
 
-}
+    .nav-links.active{
+        display:flex;
+    }
 
+    .nav-links a{
+        padding:15px 0;
+        font-size:16px;
+        color:#fff;
+    }
 
+    .apply-btn{
+        display:none;
+    }
 
-.hero-container{
+    .hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
 
+    .hero p{
+        margin:auto auto 35px;
+    }
 
-grid-template-columns:1fr;
+    .hero-buttons{
+        justify-content:center;
+    }
 
-text-align:center;
-
-
-}
-
-
-
-.hero p{
-
-margin:auto auto 35px;
-
-}
-
-
-
-.hero-buttons{
-
-justify-content:center;
-
-}
-
-
-
-.hero-card{
-
-height:300px;
-
-}
-
+    .hero-card{
+        height:300px;
+    }
 
 }
 
@@ -527,10 +554,14 @@ height:300px;
     </div>
 
 </div>
+    <div class="menu-toggle" id="menu-toggle">
+    ☰
+</div>
+    
 
 
 
-<div class="nav-links">
+<div class="nav-links" id="nav-links">
 
     <a href="#about">About</a>
 
@@ -540,10 +571,13 @@ height:300px;
 
     <a href="#contact">Contact</a>
 
-  <a href="https://razorpay.me/@cfifoundation" target="_blank" class="pay-nav-btn">
+ <a href="https://razorpay.me/@cfifoundation" target="_blank" class="pay-nav-btn">
     💳 Pay Now
 </a>
 
+<a href="data.html" class="apply-mobile">
+    Apply Now
+</a>
 </div>
 
 <a href="data.html" class="apply-btn">
@@ -1961,6 +1995,14 @@ padding:30px 20px;
 
 
 </style>
+    <script>
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+});
+</script>
 
 
 
